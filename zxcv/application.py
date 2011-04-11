@@ -18,12 +18,16 @@ class Application(object):
     def __call__(self, environ, start_response):
         return self.wsgi_app(environ, start_response)
 
+    def get_response(self, view, *args, **kw):
+        return view(*args, **kw)
+
     def wsgi_app(self, environ, start_response):
         g = self.g_cls(environ)
 
         try:
             endpoint, values = g.urls.match()
-            response = g.urls.map.get_view(endpoint)(g, **values)
+            view = g.urls.map.get_view(endpoint)
+            response = self.get_response(view, g, **values)
         except HTTPException as e:
             response = e
         else:
