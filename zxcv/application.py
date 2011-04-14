@@ -18,8 +18,8 @@ class Application(object):
     def __call__(self, environ, start_response):
         return self.wsgi_app(environ, start_response)
 
-    def get_response(self, view, *args, **kw):
-        return view(*args, **kw)
+    def get_response(self, view, g, **kw):
+        return view(g, **kw)
 
     def wsgi_app(self, environ, start_response):
         g = self.g_cls(environ)
