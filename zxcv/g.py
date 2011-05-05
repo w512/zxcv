@@ -6,9 +6,12 @@ class BaseG(object):
 
     def __init__(self, environ):
         # Is called for every request.
-        self.urls = self.url_map.bind_to_environ(environ)
+        self.urls = self.get_url_adapter(environ)
         self.request = self.request_cls(environ)
         self.templates.set_template_global('g', self)
+
+    def get_url_adapter(self, environ):
+        return self.url_map.bind_to_environ(environ)
 
     @cached_property
     def session(self):
