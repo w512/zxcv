@@ -13,6 +13,9 @@ class BaseG(object):
     def get_url_adapter(self, environ):
         return self.url_map.bind_to_environ(environ)
 
+
+class GSessionMixin(object):
+
     @cached_property
     def session(self):
         '''Return current signed cookie-based session.
@@ -51,7 +54,7 @@ class BaseG(object):
             decoded.update(old_decoded)
 
         return decoded
-    
+
     def save(self, response):
         self.session.save_cookie(
             response,

@@ -31,7 +31,8 @@ class Application(object):
         except HTTPException as e:
             response = e
         else:
-            g.save(response)
+            if hasattr(g, 'save'):
+                g.save(response)
 
         return response(environ, start_response)
 
