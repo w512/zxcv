@@ -37,13 +37,17 @@ class Application(object):
         return response(environ, start_response)
 
     def get_g_cls(self):
+        
         class G(BaseG):
             settings = self.settings
             url_map = self.url_map
             request_cls = self.request_cls
-            templates = self.template_adapter(
-                self.settings,
-                response_cls=self.response_cls
-            )
+
+            if self.template_adapter:
+                templates = self.template_adapter(
+                    self.settings,
+                    response_cls=self.response_cls
+                )
+
         return G
 

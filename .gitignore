@@ -1,5 +1,37 @@
+lToolBuilders/
+.settings/
+data/
+env/
+conf/
+etc/
+
+.ropeproject/
+.pydevproject
+*.pidaproject
+.project
+*.packed.css
+*.packed.js
+
+*.log
+*.mo
+*.py[oc]
 *~
-*.py[co]
+\#*\#
+*.swp
 
+*.egg
+*.egg-info
+dist/
+build/
+eggs
+parts
+bin/
+develop-eggs
+.installed.cfg
+MANIFEST
+pip-log.txt
 
+.coverage
+.tox
+__pycache__/
 

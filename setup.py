@@ -3,7 +3,7 @@
 import os.path as op
 from distutils.core import setup
 
-from zxcv import __version__, __author__
+from zxcv import __doc__, __version__, __author__, __email__
 
 
 def read(fn):
@@ -13,11 +13,12 @@ def read(fn):
 setup(
     name='zxcv',
     version=__version__,
-    author=__author__[:14],
-    author_email=__author__[16:-1],
+    author=__author__,
+    author_email=__email__,
     license='BSD License',
+    description=__doc__,
     long_description=read('README'),
-    packages=['zxcv', ],
+    packages=['zxcv'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',

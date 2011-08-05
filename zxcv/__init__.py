@@ -1,11 +1,7 @@
-'''
-    zxcv
-    ~~~~
-
-    :copyright: (c) 2009 by Pavlo Kapyshin.
-'''
+'''Something that is not a web framework.'''
 
 
-__version__ = '0.3'
-__author__ = 'Pavlo Kapyshin (i@93z.org)'
+__version__ = '0.3.1'
+__author__ = 'Pavlo Kapyshin'
+__email__ = 'i@93z.org'
 

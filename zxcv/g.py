@@ -8,7 +8,9 @@ class BaseG(object):
         # Is called for every request.
         self.urls = self.get_url_adapter(environ)
         self.request = self.request_cls(environ)
-        self.templates.set_template_global('g', self)
+
+        if hasattr(self, 'templates'):
+            self.templates.set_template_global('g', self)
 
     def get_url_adapter(self, environ):
         return self.url_map.bind_to_environ(environ)

@@ -1,1 +1,8 @@
-zxcv.
+zxcv is a library with an Application class, BaseG class, and some helpers.
+
+Let's say you want to use Werkzeug, Jinja2 and SQLAlchemy for your new web site.
+And you start with some Application class, then write routing code and your code
+quickly turns into mess because you're just trying to make stupid things do what
+you need. And here comes zxcv, not-a-web-framework, that helps you organize your
+code.
+
