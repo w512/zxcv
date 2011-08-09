@@ -4,7 +4,7 @@ from werkzeug.exceptions import HTTPException
 from g import BaseG
 
 
-class Application(object):
+class BaseApplication(object):
     response_cls = Response
     request_cls = Request
     template_adapter = None
@@ -50,4 +50,7 @@ class Application(object):
                 )
 
         return G
+
+
+Application = BaseApplication  # compat.
 
